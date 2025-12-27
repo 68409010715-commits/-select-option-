@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Dropdown Menu Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        select {
+            padding: 8px;
+            width: 250px;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>ตัวอย่างเมนู Dropdown</h2>
+
+    <label for="course">เลือกสาขาวิชา:</label><br><br>
+
+    <select id="course" onchange="showChoice()">
+        <option value="">-- กรุณาเลือก --</option>
+        <option value="เทคโนโลยีสารสนเทศ">เทคโนโลยีสารสนเทศ</option>
+        <option value="วิทยาการคอมพิวเตอร์">วิทยาการคอมพิวเตอร์</option>
+        <option value="ความปลอดภัยไซเบอร์">ความปลอดภัยไซเบอร์</option>
+        <option value="ระบบเครือข่าย">ระบบเครือข่าย</option>
+    </select>
+
+    <div id="output"></div>
+
+    <script>
+        function showChoice() {
+            const select = document.getElementById("course");
+            const value = select.value;
+
+            if (value === "") {
+                document.getElementById("output").innerHTML = "";
+            } else {
+                document.getElementById("output").innerHTML =
+                    "คุณเลือกสาขา: " + value;
+            }
+        }
+    </script>
+
+</body>
+</html>
